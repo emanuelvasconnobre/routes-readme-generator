@@ -15,9 +15,10 @@ def method_request(method: str, url: str, body: dict, headers: list[str]):
     return method_request_template.format(
         method=method,
         url=url,
-        body=json.dumps(body, indent=2),
+        body=json.dumps(body, ensure_ascii=False, indent=2),
         headers="\n".join(headers),
     )
+
 
 method_response_case_template = """
 #### Caso: `{name}`
@@ -52,7 +53,7 @@ def response_case(name: str, status: int, headers: list[str], body: dict):
         name=name,
         status=status,
         headers="\n".join(headers),
-        body=json.dumps(body, indent=2),
+        body=json.dumps(body, ensure_ascii=False, indent=2),
     )
 
 
@@ -76,7 +77,7 @@ def method_builder(method_data: list[dict]):
         request_section = method_request(
             method=method["method"],
             body=method["request_details"]["body"],
-            headers=method["request_details"]["headers"],
+            headers=method["request_details"].get("headers", []),
             url=method["request_details"]["url"],
         )
 
