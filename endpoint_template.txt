@@ -1,0 +1,11 @@
+## {path}
+### Descrição:
+{description}
+
+### Métodos HTTP:
+- {allow_methods}
+
+### URL:
+- `{url}`
+
+{examples_section}
