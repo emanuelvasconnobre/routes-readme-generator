@@ -1,0 +1,48 @@
+{
+    "endpoints": [
+        {
+            "path": "/health",
+            "description": "Este Endpoint tem como objetivo mostrar a saúde da API, se está disponível para uso. Retorna uma resposta descrevendo a saúde do sistema.",
+            "allow_methods": [
+                "GET"
+            ],
+            "url": "http://localhost:8080/v1/health",
+            "request_methods": [
+                {
+                    "method": "GET",
+                    "request_details": {
+                        "url": "http://localhost:8080/v1/health",
+                        "body": {},
+                        "headers": []
+                    },
+                    "response_cases": [
+                        {
+                            "name": "SUCCESS",
+                            "status": 200,
+                            "body": {
+                                "situation": "healthy",
+                                "details": null
+                            },
+                            "headers": [
+                                "X-health: GOOD"
+                            ]
+                        },
+                        {
+                            "name": "DATABASE_FAIL",
+                            "status": 500,
+                            "body": {
+                                "situation": "failure",
+                                "details": {
+                                    "database": "corromped"
+                                }
+                            },
+                            "headers": [
+                                "X-health: corromped"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
