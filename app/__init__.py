@@ -2,7 +2,7 @@ import json
 from method import method_builder
 
 # Variável para "Nenhum(a)"
-none_placeholder = "Nenhum(a)"
+none_placeholder = "None"
 
 
 def read_template(file_path):

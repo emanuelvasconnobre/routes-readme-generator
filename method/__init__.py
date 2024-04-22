@@ -21,7 +21,7 @@ def method_request(method: str, url: str, body: dict, headers: list[str]):
 
 
 method_response_case_template = """
-#### Caso: `{name}`
+#### Case: `{name}`
 
 ```http 
 Status code: {status}
@@ -58,13 +58,13 @@ def response_case(name: str, status: int, headers: list[str], body: dict):
 
 
 method_template = """
-## Método {method}:
+## Method {method}:
 
-### Exemplo de Requisição:
+### Request example:
 
 {request_section}
 
-### Exemplo de Resposta:
+### Response example:
 
 {response_section}
 """

@@ -1,8 +1,8 @@
-## {path}
-### Descrição:
+## Endpoint: {path}
+### Description:
 {description}
 
-### Métodos HTTP:
+### HTTP Methods:
 - {allow_methods}
 
 ### URL:
